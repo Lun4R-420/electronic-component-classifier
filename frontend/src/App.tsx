@@ -94,7 +94,7 @@ function App() {
         </div>
       )}
 
-      <Loading/>
+      {loading && <Loading/>}
     </div>
   );
 }
