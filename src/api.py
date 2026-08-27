@@ -8,6 +8,9 @@ app = FastAPI()
 
 model = load_model()
 
+warmup_image = Image.new("RGB", (640, 640))
+model.predict(source=warmup_image, verbose=False)
+
 @app.post("/detect")
 async def detect(file: UploadFile = File(...)):
     contents = await file.read()

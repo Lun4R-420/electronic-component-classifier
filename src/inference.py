@@ -2,7 +2,7 @@ from ultralytics import YOLO
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
-MODEL_PATH = PROJECT_ROOT / "runs" / "detect" / "train" / "weights" / "best.pt"
+MODEL_PATH = PROJECT_ROOT / "runs" / "detect" / "train" / "weights" / "best.onnx"
 
 def load_model():
     return YOLO(MODEL_PATH)

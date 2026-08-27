@@ -2,7 +2,9 @@
 data/
 runs/**/weights/*
 !runs/**/weights/best.pt
+!runs/**/weights/best.onnx
 yolo11s.pt
 frontend/node_modules/
 frontend/dist/
+static/
 __pycache__/
