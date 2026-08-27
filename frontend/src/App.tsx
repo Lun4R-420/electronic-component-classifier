@@ -1,5 +1,6 @@
 import { useState, type FormEvent, type ChangeEvent } from "react";
 import "./App.css";
+import Loading from "./Loading.tsx";
 
 interface Detection {
   class_name: string;
@@ -16,6 +17,7 @@ function App() {
   const [file, setFile] = useState<File | null>(null);
   const [detectedObjects, setDetectedObjects] = useState<Detection[]>([]);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -33,6 +35,7 @@ function App() {
     e.preventDefault();
     if (!file) return;
 
+    setLoading(true);
     const formData = new FormData();
     formData.append("file", file);
 
@@ -43,6 +46,7 @@ function App() {
 
     const data = await response.json();
     setDetectedObjects(data.detections);
+    setLoading(false);
     console.log("Detected Objects:", data.detections);
   }
 
@@ -89,6 +93,8 @@ function App() {
           </div>
         </div>
       )}
+
+      <Loading/>
     </div>
   );
 }
