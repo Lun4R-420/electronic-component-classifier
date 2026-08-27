@@ -51,7 +51,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="app-container">
       <div className="title">
         <h1>Electronic Component Detector</h1>
       </div>
