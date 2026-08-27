@@ -1,7 +1,8 @@
 .venv/
 data/
-runs/**/weights/
-*.pt
+runs/**/weights/*
+!runs/**/weights/best.pt
+yolo11s.pt
 frontend/node_modules/
 frontend/dist/
 __pycache__/

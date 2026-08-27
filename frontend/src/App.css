@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Nabla&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+body {
+  margin: 0;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-family: "Quantico", sans-serif;
   color: white;
+  min-height: 100vh;
 }
 
 .title {

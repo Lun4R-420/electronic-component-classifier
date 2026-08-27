@@ -1,20 +1,10 @@
 from fastapi import FastAPI, File, UploadFile
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from PIL import Image
 import io
 from src.inference import load_model, run_detection
 
 app = FastAPI()
-
-origins = ["http://localhost:5173"]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"]
-)
 
 model = load_model()
 
@@ -29,3 +19,5 @@ async def detect(file: UploadFile = File(...)):
 @app.get("/health")
 async def health():
     return {"status": "ok"}
+
+app.mount("/", StaticFiles(directory="static", html=True), name="static")

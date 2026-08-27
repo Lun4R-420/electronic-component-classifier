@@ -36,7 +36,7 @@ function App() {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch("http://localhost:8000/detect", {
+    const response = await fetch("/detect", {
       method: "POST",
       body: formData,
     });
