@@ -60,6 +60,11 @@ Also hit an out-of-memory crash along the way: `pip install torch` was quietly g
 
 ## Running locally
 
+```bash
+git clone https://github.com/Lun4R-420/electronic-component-classifier.git
+cd electronic-component-classifier
+```
+
 Docker, matches production:
 ```bash
 docker build -t component-detector .
