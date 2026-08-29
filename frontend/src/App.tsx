@@ -56,7 +56,7 @@ function App() {
         <h1>Electronic Component Detector</h1>
       </div>
       <div className="instructions">
-        <h2>Add an image with electronic components and click "Detect" to identify them</h2>
+        <h2>Upload an image with electronic components and click "Detect" to identify them</h2>
       </div>
       <div>
         <form onSubmit={handleSubmit} className="upload-form">
